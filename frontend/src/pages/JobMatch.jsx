@@ -1,4 +1,5 @@
 import { useState } from "react";
+import API_URL from "../api";
 
 function JobMatch() {
   const [resumeId, setResumeId] = useState("");
@@ -32,7 +33,7 @@ function JobMatch() {
       setLoading(true);
 
       const response = await fetch(
-        `http://127.0.0.1:8000/api/job-match/match?resume_id=${resumeId}&job_description=${encodeURIComponent(
+        `${API_URL}/api/job-match/match?resume_id=${encodeURIComponent(resumeId)}&job_description=${encodeURIComponent(
           jobDescription
         )}`,
         {

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import API_URL from "./api";
 import "./index.css";
-
-const API_URL = "http://127.0.0.1:8000";
 
 /* =========================================================
    SAFE HELPERS
@@ -280,7 +279,7 @@ function App() {
     } catch (err) {
       if (err instanceof TypeError) {
         throw new Error(
-          "Cannot connect to backend. Make sure FastAPI is running on http://127.0.0.1:8000."
+          "Cannot connect to the backend. Start the FastAPI server locally or configure VITE_API_URL with your deployed backend URL."
         );
       }
 
